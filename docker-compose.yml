@@ -1,0 +1,44 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+     - "8080:80"
+    environment:
+      TERM:
+      DB_TYPE: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASS:
+      DB_NAME:
+      MEMCACHE_HOST: memcached
+      REDIS_HOST: redis
+      YII_ENV:
+      YII_DEBUG:
+      YII_LOG_LEVEL:
+      YII_LOG_TRACE_LEVEL:
+      YII_GII_ENABLE:
+      YII_GII_ALLOWED_IPS:
+      YII_DEBUG_ENABLE:
+      YII_DEBUG_ALLOWED_IPS:
+      USER_ADMIN:
+      IDEFIX_API_URL:
+    depends_on:
+      - redis
+      - memcached
+      - db
+  redis:
+    image: "redis"
+    environment:
+      TERM:
+  memcached:
+    image: "memcached"
+    environment:
+      TERM:
+  db:
+    image: "mysql"
+    environment:
+      TERM:
+      MYSQL_ROOT_PASSWORD: "${DB_PASS}"
+      MYSQL_DATABASE: "${DB_NAME}"
