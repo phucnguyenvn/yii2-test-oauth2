@@ -11,12 +11,12 @@ services:
       DB_PORT: 3306
       DB_USER: root
       DB_PASS: U5dk53HHqp
-      DB_NAME: patchman
+      DB_NAME: oauth2server
     depends_on:
       - db
   db:
     image: "mysql"
     environment:
       TERM:
-      MYSQL_ROOT_PASSWORD: "${DB_PASS}"
-      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_ROOT_PASSWORD: U5dk53HHqp
+      MYSQL_DATABASE: oauth2server
