@@ -8,4 +8,4 @@ su www-data -s /bin/bash -c 'php yii migrate/up --migrationPath=@vendor/macfly/y
 su www-data -s /bin/bash -c '[ -d migrations ] && php yii migrate/up --interactive=0'
 su www-data -s /bin/bash -c 'ls'
 exec "apache2-foreground"
-su www-data -s /bin/bash -c './vendor/bin/codecept run'
+# su www-data -s /bin/bash -c './vendor/bin/codecept run'
