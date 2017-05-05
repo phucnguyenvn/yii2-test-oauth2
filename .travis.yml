@@ -1,7 +1,5 @@
 sudo: required
 
-language: php
-
 services:
   - docker
 
@@ -41,8 +39,5 @@ before_install:
   # whatever reason it's best to report that now before your tests start
   # otherwise it can be really tricky to debug why tests are failing sometimes.
   - docker ps
-
-  # This is just our script to setup all the database tables and other fixtures
-  # we need. You should remove this if it's not necessary or you have other
-  # scripts handling this.
-  # - docker/web/provision.sh
+  - nc -zv 127.0.0.1 8080
+  - docker-compose exec web ./vendor/bin/codecept run
