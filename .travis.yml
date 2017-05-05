@@ -4,6 +4,9 @@ language: php
 
 services:
   - docker
+addons:
+  hosts:
+    - oauth2.server
 
 env:
   DOCKER_COMPOSE_VERSION: 1.8.0
