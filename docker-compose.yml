@@ -5,8 +5,6 @@ services:
     ports:
      - "80:80"
     environment:
-      TERM:
-      DB_TYPE: mysql
       DB_HOST: db
       DB_PORT: 3306
       DB_USER: root
@@ -17,6 +15,5 @@ services:
   db:
     image: "mysql"
     environment:
-      TERM:
       MYSQL_ROOT_PASSWORD: t8wTqe5DUC
       MYSQL_DATABASE: oauth2server
