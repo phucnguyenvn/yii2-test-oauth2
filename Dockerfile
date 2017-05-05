@@ -25,6 +25,7 @@ COPY files/Oauth2Users.php /var/www/html/models/
 COPY files/functional.suite.yml /var/www/html/tests/
 COPY files/ClientCredentialCept.php /var/www/html/tests/functional/
 COPY files/yii.conf /etc/apache2/sites-available/000-default.conf
+RUN chmod 777 /var/www/html/tests/_output
 # Check requirements for basic app
 RUN php requirements.php
 COPY files/start.sh /
