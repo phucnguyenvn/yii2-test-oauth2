@@ -22,7 +22,7 @@ COPY files/php.ini /usr/local/etc/php/
 COPY files/db.php /var/www/html/config/
 COPY files/web.php /var/www/html/config/
 COPY files/Oauth2Users.php /var/www/html/models/
-COPY files/tests /var/www/html/
+COPY files/tests /var/www/html/tests
 COPY files/yii.conf /etc/apache2/sites-available/000-default.conf
 RUN chmod 777 /var/www/html/tests/_output
 # Check requirements for basic app
