@@ -17,7 +17,7 @@ RUN composer global require "fxp/composer-asset-plugin:^1.3.1"
 WORKDIR /var/www/html/
 COPY files/auth.json /root/.composer/
 RUN composer create-project --prefer-dist yiisoft/yii2-app-basic ./
-RUN composer require --prefer-dist macfly/yii2-oauth2-server "*"
+RUN composer require --prefer-dist macfly/yii2-oauth2-server "*" && composer require --prefer-dist guzzlehttp/guzzle
 COPY files/php.ini /usr/local/etc/php/
 COPY files/db.php /var/www/html/config/
 COPY files/web.php /var/www/html/config/
