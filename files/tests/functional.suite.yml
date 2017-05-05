@@ -12,6 +12,6 @@ modules:
       - Filesystem
       - Yii2
       - REST:
-          url: http://oauth2.server:8080/oauth2
+          url: http://localhost:8080/oauth2
           depends: PhpBrowser
           part: Json
