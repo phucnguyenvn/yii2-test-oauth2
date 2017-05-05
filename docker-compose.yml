@@ -10,7 +10,7 @@ services:
       DB_HOST: db
       DB_PORT: 3306
       DB_USER: root
-      DB_PASS: U5dk53HHqp
+      DB_PASS: t8wTqe5DUC
       DB_NAME: oauth2server
     depends_on:
       - db
@@ -18,5 +18,5 @@ services:
     image: "mysql"
     environment:
       TERM:
-      MYSQL_ROOT_PASSWORD: U5dk53HHqp
+      MYSQL_ROOT_PASSWORD: t8wTqe5DUC
       MYSQL_DATABASE: oauth2server

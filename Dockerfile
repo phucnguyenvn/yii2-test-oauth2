@@ -17,9 +17,15 @@ RUN composer global require "fxp/composer-asset-plugin:^1.3.1"
 WORKDIR /var/www/html/
 COPY files/auth.json /root/.composer/
 RUN composer create-project --prefer-dist yiisoft/yii2-app-basic ./
+RUN composer require --prefer-dist macfly/yii2-oauth2-server "*"
 COPY files/php.ini /usr/local/etc/php/
 COPY files/db.php /var/www/html/config/
 COPY files/web.php /var/www/html/config/
+COPY files/Oauth2Users.php /var/www/html/models/
 COPY files/yii.conf /etc/apache2/sites-available/000-default.conf
 # Check requirements for basic app
 RUN php requirements.php
+COPY files/start.sh /
+COPY files/wait-for-it.sh /
+RUN chmod +x /*.sh
+CMD ["/start.sh"]
