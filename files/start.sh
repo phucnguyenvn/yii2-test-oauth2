@@ -7,6 +7,8 @@ su www-data -s /bin/bash -c 'php yii migrate/up --migrationPath=@vendor/macfly/y
 ## Add/Update rbac permissions/roles
 su www-data -s /bin/bash -c '[ -d migrations ] && php yii migrate/up --interactive=0'
 ifconfig
+apachectl start
+service apache2 restart
 service apache2 status
 service --status-all | grep apache2
 apachectl status
