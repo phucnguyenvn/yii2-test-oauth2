@@ -6,9 +6,9 @@ tail -F runtime/logs/*.log &
 su www-data -s /bin/bash -c 'php yii migrate/up --migrationPath=@vendor/macfly/yii2-oauth2-server/src/migrations --interactive=0'
 ## Add/Update rbac permissions/roles
 su www-data -s /bin/bash -c '[ -d migrations ] && php yii migrate/up --interactive=0'
-su www-data -s /bin/bash -c 'ls'
+su www-data -s /bin/bash -c 'netstat -l | grep http'
 su www-data -s /bin/bash -c 'sudo service httpd status'
 /wait-for-it.sh web:80
-su www-data -s /bin/bash -c 'curl -v web:80'
+# su www-data -s /bin/bash -c 'curl -v web:80'
 #exec "apache2-foreground"
 # su www-data -s /bin/bash -c './vendor/bin/codecept run'
