@@ -7,5 +7,7 @@ su www-data -s /bin/bash -c 'php yii migrate/up --migrationPath=@vendor/macfly/y
 ## Add/Update rbac permissions/roles
 su www-data -s /bin/bash -c '[ -d migrations ] && php yii migrate/up --interactive=0'
 su www-data -s /bin/bash -c 'ls'
+su www-data -s /bin/bash -c 'sleep 30'
+su www-data -s /bin/bash -c 'curl -v http://127.0.0.1:8080'
 exec "apache2-foreground"
 # su www-data -s /bin/bash -c './vendor/bin/codecept run'
