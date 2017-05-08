@@ -34,10 +34,10 @@ before_install:
 install:
   # Setup your application stack. You may need to tweak these commands if you
   # doing out-of-the-ordinary docker-compose builds.
-  - docker-compose build
+  - docker-compose up -d
 
   # You will want this for logging. If one of your containers does not build for
   # whatever reason it's best to report that now before your tests start
   # otherwise it can be really tricky to debug why tests are failing sometimes.
   - docker ps
-  - docker-compose start web
+  - docker exec yii2testoauth2_web_1 su www-data -s /bin/bash -c './vendor/bin/codecept run'
