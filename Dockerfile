@@ -29,5 +29,6 @@ RUN chmod 777 /var/www/html/tests/_output
 RUN php requirements.php
 COPY files/start.sh /
 COPY files/wait-for-it.sh /
+COPY files/run.sh /
 RUN chmod +x /*.sh
 CMD ["/start.sh"]
