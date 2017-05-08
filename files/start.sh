@@ -9,4 +9,4 @@ su www-data -s /bin/bash -c '[ -d migrations ] && php yii migrate/up --interacti
 apachectl start
 service apache2 restart
 /wait-for-it.sh 127.0.0.1:80
-# su www-data -s /bin/bash -c './vendor/bin/codecept run'
+su www-data -s /bin/bash -c './vendor/bin/codecept run'
