@@ -11,8 +11,7 @@ apachectl start
 service apache2 restart
 service apache2 status
 service --status-all | grep apache2
-apachectl status
-/wait-for-it.sh web:80
+/wait-for-it.sh 127.0.0.1:80
 # su www-data -s /bin/bash -c 'curl -v web:80'
 #exec "apache2-foreground"
 # su www-data -s /bin/bash -c './vendor/bin/codecept run'
