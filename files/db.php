@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => sprintf("%s:host=%s;dbname=%s", $_ENV["DB_TYPE"], $_ENV["DB_HOST"], $_ENV["DB_NAME"]),
-    'username' => $_ENV["DB_USER"],
-    'password' => $_ENV["DB_PASS"],
+    'dsn' => sprintf("%s:host=%s;dbname=%s", 'mysql', 'db', 'oauth2server'),
+    'username' => 'root',
+    'password' => 't8wTqe5DUC',
     'charset' => 'utf8',
 ];
