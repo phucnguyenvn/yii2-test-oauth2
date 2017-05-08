@@ -41,4 +41,5 @@ install:
   # otherwise it can be really tricky to debug why tests are failing sometimes.
   - docker ps
   - ls
-  - docker exec yii2testoauth2_web_1 su www-data -s /bin/bash -c 'service apache2 restart && /wait-for-it.sh 127.0.0.1:80 && ./vendor/bin/codecept run'
+  - docker exec yii2testoauth2_web_1 service apache2 restart
+  - docker exec yii2testoauth2_web_1 su www-data -s /bin/bash -c '/wait-for-it.sh 127.0.0.1:80 && ./vendor/bin/codecept run'
