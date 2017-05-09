@@ -23,7 +23,6 @@ COPY files/db.php /var/www/html/config/
 COPY files/web.php /var/www/html/config/
 COPY files/Oauth2Users.php /var/www/html/models/
 COPY files/tests /var/www/html/tests
-COPY files/m140501_075311_add_oauth2_server.php /var/www/html/
 COPY files/yii.conf /etc/apache2/sites-available/000-default.conf
 RUN chmod 777 /var/www/html/tests/_output
 # Check requirements for basic app
